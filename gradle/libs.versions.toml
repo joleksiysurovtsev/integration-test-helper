@@ -1,0 +1,49 @@
+[versions]
+spring-ver = "6.1.5"
+
+spring-jdbc = "6.1.5"
+spring-kafka = "3.3.3"
+spring-boot-ver = "3.2.3"
+spring-data-commons = "3.4.3"
+testcontainers = "1.20.5"
+junit-jupiter = "5.12.0"
+kafka-clients = "3.9.0"
+jackson = "2.18.2"
+json-simple = "1.1"
+kotlin-reflect = "2.1.20-RC"
+
+[libraries]
+# ==== Spring dependencies ====
+spring-context = { module = "org.springframework:spring-context", version.ref = "spring-ver" }
+spring-web = { module = "org.springframework:spring-web", version.ref = "spring-ver" }
+spring-test = { module = "org.springframework:spring-test", version.ref = "spring-ver" }
+
+spring-jdbc = { module = "org.springframework:spring-jdbc", version.ref = "spring-jdbc" }
+spring-kafka = { module = "org.springframework.kafka:spring-kafka", version.ref = "spring-kafka" }
+
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot-ver" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot-ver" }
+spring-data-commons = { module = "org.springframework.data:spring-data-commons", version.ref = "spring-data-commons" }
+
+# ==== TestContainers (integration testing) ====
+testcontainers = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+testcontainers-kafka = { module = "org.testcontainers:kafka", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+
+# ==== JUnit (testing framework) ====
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit-jupiter" }
+
+# ==== Apache Kafka dependencies ====
+kafka-clients = { module = "org.apache.kafka:kafka-clients", version.ref = "kafka-clients" }
+
+# ==== JSON processing (Jackson) ====
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+jackson-datatype-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson" }
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
+json-simple = { module = "com.googlecode.json-simple:json-simple", version.ref = "json-simple" }
+
+# ==== Miscellaneous ====
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin-reflect" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.0.21" }
