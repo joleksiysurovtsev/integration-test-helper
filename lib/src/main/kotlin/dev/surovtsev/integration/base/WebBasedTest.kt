@@ -31,7 +31,7 @@ interface WebBasedTest{
         expectedStatusCode: ResultMatcher? = MockMvcResultMatchers.status().isOk,
         inClass: KClass<In>,
         mapper: (In) -> Out = { it as Out },
-        url: String? = null
+        url: String
     ): Out {
         val response = mockMvc.perform(MockMvcRequestBuilders.get(url))
             .andExpect(expectedStatusCode!!)
@@ -144,7 +144,7 @@ interface WebBasedTest{
         expectedStatusCode: ResultMatcher = MockMvcResultMatchers.status().isOk,
         inClass: KClass<In>,
         mapper: (In) -> Out = { it as Out },
-        url: String? = null
+        url: String
     ): Out {
         val requestBuilder = MockMvcRequestBuilders.put(url)
             .contentType(MediaType.APPLICATION_JSON)
@@ -182,7 +182,7 @@ interface WebBasedTest{
         expectedStatusCode: ResultMatcher = MockMvcResultMatchers.status().isOk,
         inClass: KClass<In>,
         mapper: (In) -> Out = { it as Out },
-        url: String? = null
+        url: String
     ): Out {
         return put<Unit, In, Out>(
             dto = null,
